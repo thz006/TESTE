@@ -12,14 +12,18 @@
                 <input type="text" name="search" class="srch" placeholder="Buscar">
             </form>
         </div>
+        <div class="responsive-menu">
+            <a href="#">Sobre</a>
+            <a href="#">Orçamento</a>
+        </div>
         <nav class="navb">
             <ul>
                 <li><a class="op" href="home.php">Home</a></li>
-                <li><a class="op" href="#">Sobre</a></li>
+                <li><a class="op" href="app/user/View/pages/quemsomos.php">Sobre</a></li>
                 <li><a class="op" href="app/user/View/pages/orcamento.php">Orçamento</a></li>
                 <li><a class="op" href="app/user/View/pages/cadastro.php">Cadastre-se</a></li>
                 <li>
-                    <a class="op" href="App/user/View/pages/Carrinho.php"><i class='bx bx-cart-alt'></i></a>
+                    <a class="op" href="app/user/View/pages/Carrinho.php"><i class='bx bx-cart-alt'></i></a>
                     <a class="op" href="app/user/view/pages/login.php"><i class='bx bx-user'></i></a>
                 </li>
             </ul>
@@ -28,20 +32,16 @@
         <!-- Menu hamburguer (começa escondido) -->
         <div class="hamburger-menu">
             <div class="user-info">
-                <img src="public/assets/img/Hardwares.png" alt="Foto do Usuário">
+                <img src="public/assets/img/User Pic.png" alt="Foto do Usuário">
                 <p class="hi-user">Olá, Usuário</p>
             </div>
 
-            <a href="#" class="department-link">Departamentos</a>
-
-            <hr class="sep"> <!-- Linha separadora -->
+            <hr class="sep"> 
 
             <ul class="menu-options">
-                <li><a href="#">Minha Conta</a></li>
-                <li><a href="#">Meus Dados</a></li>
-                <li><a href="#">Meus Pedidos</a></li>
-                <li><a href="#">Carteira</a></li>
-            </ul>
+            <li class="menu-item-nav">
+                  <a href="#"><img src="public/assets/img/editar.png" alt=""><span class="item-description-nav">Departamentos</span></a>
+                </li>
 
             <div class="auth-buttons">
                 <a href="app/user/view/pages/login.php" class="btn-login">Entrar</a>

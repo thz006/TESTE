@@ -4,7 +4,7 @@
             <i class='bx bx-menu'></i>
         </div>
         <div class="logo">
-            <a href="home.php"><img src="../../../../public/assets/img/Ativo 2.png" alt="logo tweeb"></a>
+            <a href="../../../../home.php"><img src="../../../../public/assets/img/Ativo 2.png" alt="logo tweeb"></a>
         </div>
         <div class="search-box">
             <form action="">
@@ -12,47 +12,86 @@
                 <input type="text" name="search" class="srch" placeholder="Buscar">
             </form>
         </div>
+        <div class="responsive-menu">
+            <a href="#">Sobre</a>
+            <a href="#">Orçamento</a>
+        </div>
         <nav class="navb">
             <ul>
-                <li><a class="op" href="home.php">Home</a></li>
-                <li><a class="op" href="#">Sobre</a></li>
-                <li><a class="op" href="#">Orçamento</a></li>
-                <li><a class="op" href="../../../../app/user/View/pages/cadastro.php">Sair</a></li>
+                <li><a class="op" href="../../../../home.php">Home</a></li>
+                <li><a class="op" href="quemsomos.php">Sobre</a></li>
+                <li><a class="op" href="orcamento.php">Orçamento</a></li>
+                <li><a class="op" href="cadastro.php">Sair</a></li>
                 <li>
                     <a class="op"href="#"><i class='bx bx-cart-alt'></i></a>
                     <!-- <a href="app/user/view/pages/login.php"><i class='bx bx-user'></i></a> -->
                     <a href="#" class="user-icon">
-                        <img src="../../../../public/assets/img/Avatar.png" alt="teste">
+                        <img src="../../../../public/assets/img/User Pic.png" alt="teste">
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- Menu hamburguer (começa escondido) -->
-        <div class="hamburger-menu">
-            <div class="user-info">
-                <img src="../../../../public/assets/img/Hardwares.png" alt="Foto do Usuário">
-                <p class="hi-user">Olá, Usuário</p>
-            </div>
+    <div class="hamburger-menu">
+    <div class="user-info">
+        <img src="../../../../public/assets/img/User Pic.png" alt="Foto do Usuário">
+        <p class="hi-user">Olá, Usuário</p>
+        <span class="close-menu-nav">X</span>
+    </div>
 
-            <a href="#" class="department-link">Departamentos</a>
+    <hr class="sep"> 
 
-            <hr class="sep"> <!-- Linha separadora -->
-
-            <ul class="menu-options">
-                <li><a href="#">Minha Conta</a></li>
-                <li><a href="#">Meus Dados</a></li>
-                <li><a href="#">Meus Pedidos</a></li>
-                <li><a href="#">Carteira</a></li>
+    <!-- Menu principal -->
+    <ul class="menu-options main-menu">
+        <li class="menu-item-nav">
+            <a href="#" class="toggle-departamentos">
+                <img src="../../../../public/assets/img/editar.png" alt="">
+                <span class="item-description-nav">Departamentos</span>
+                <i class="arrow fa-solid fa-chevron-right"></i>
+            </a>
+        </li>
+        <li class="menu-item-nav">
+            <a href="#"><img src="../../../../public/assets/img/editar.png" alt=""><span class="item-description-nav">Editar Perfil</span></a>
+        </li>
+        <li class="menu-item-nav">
+            <a href="#"><img src="../../../../public/assets/img/Calendar.png" alt=""><span class="item-description-nav">Meus Endereços</span></a>
+        </li>
+        <li class="menu-item-nav">
+            <a href="#" class="toggle-pedidos">
+                <img src="../../../../public/assets/img/Inbox.png" alt="">
+                <span class="item-description-nav">Meus Pedidos</span>
+                <i class="arrow fa-solid fa-chevron-right"></i> 
+            </a>
+            <ul class="segundomenu-nav">
+                <li><a href="#"><span class="item-description-nav">Pedidos Enviados</span></a></li>
+                <li><a href="#"><span class="item-description-nav">Pedidos Cancelados</span></a></li>
             </ul>
+        </li>
+        <li class="menu-item-nav">
+            <a href="#"><img src="../../../../public/assets/img/Like.png" alt=""><span class="item-description-nav">Favoritos</span></a>
+        </li>
+        <li class="menu-item-nav">
+            <a href="#"><img src="../../../../public/assets/img/alterar.png" alt=""><span class="item-description-nav">Alterar Senha</span></a>
+        </li>
+        <li class="menu-item-nav">
+            <a href="#"><img src="../../../../public/assets/img/sair.png" alt=""><span class="item-description-nav">Sair</span></a>
+        </li>
+    </ul>
 
-            <div class="auth-buttons">
-                <a href="../../../../app/user/view/pages/login.php" class="btn-login">Entrar</a>
-                <a href="../../../../app/user/View/pages/cadastro.php" class="btn-register">Cadastrar</a>
-            </div>
-        </div>
+    <!-- Submenu de Departamentos (começa oculto) -->
+    <div class="departamentos-menu">
+        <button class="voltar-menu">← Voltar</button>
+        <ul class="sub-departamentos">
+            <li><a href="#"><span class="item-description-nav">Eletrônicos</span></a></li>
+            <li><a href="#"><span class="item-description-nav">Vestuário</span></a></li>
+            <li><a href="#"><span class="item-description-nav">Alimentos</span></a></li>
+        </ul>
+    </div>
+</div>
+
+
     </header>
-
+    
     <!-- Barra de departamentos -->
     <section id="departaments" class="departments-bar">
         <div class="department">
@@ -271,5 +310,53 @@
             </ul>
         </div>
     </section>
+    <script>// Seleciona o item "Meus Pedidos" que será clicado
+const pedidosLink = document.querySelector('.toggle-pedidos');
+const arrow = pedidosLink.querySelector('.arrow');
+const menuItem = pedidosLink.closest('.menu-item-nav');
+const secondMenu = menuItem.querySelector('.segundomenu-nav');
+
+// Alterna a visibilidade da subsessão e a rotação da seta ao clicar
+pedidosLink.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Alterna a classe 'open' no menu e a rotação da seta
+    menuItem.classList.toggle('open');
+    arrow.classList.toggle('rotate');
+});
+
+// Fecha o menu e reseta a seta se clicar fora do menu
+document.addEventListener('click', function(event) {
+    if (!menuItem.contains(event.target)) {
+        // Fecha o menu e reseta a seta
+        menuItem.classList.remove('open');
+        arrow.classList.remove('rotate');
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const departamentosLink = document.querySelector(".toggle-departamentos");
+    const departamentosMenu = document.querySelector(".departamentos-menu");
+    const voltarMenuButton = document.querySelector(".voltar-menu");
+    const mainMenu = document.querySelector(".main-menu");
+
+    // Mostrar submenu de Departamentos quando clicar no link "Departamentos"
+    departamentosLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevenir o comportamento padrão de links
+
+        // Esconde o menu principal e exibe o submenu de departamentos
+        mainMenu.style.display = "none"; // Esconde o menu principal
+        departamentosMenu.classList.add("active"); // Exibe o submenu de Departamentos
+    });
+
+    // Voltar para o menu principal quando clicar no botão "Voltar"
+    voltarMenuButton.addEventListener("click", function () {
+        departamentosMenu.classList.remove("active"); // Esconde o submenu de Departamentos
+        mainMenu.style.display = "block"; // Exibe o menu principal novamente
+    });
+});
+
+</script>
     <script src="../../../../public/js/navbar.js"></script>
 </html>
